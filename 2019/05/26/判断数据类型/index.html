@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="一个前端工程师的个人博客">
-<meta name="keywords" content="前端、JavaScript、HTML5、CSS、Vue、SASS、TypeScript">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kuma&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="JavaScript中有6种数据类型：数字（number）、字符串（string）、布尔值（boolean）、undefined、null、对象（Object）、Symbol（ES6新增）。其中对象类型包括：数组（Array）、函数（Function）、还有两个特殊的对象：正则（RegExp）和日期（Date）。 JavaScript有多种方法确定一个值到底是什么类型。 typeof运算符type">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="判断数据类型">
+<meta property="og:url" content="http://yoursite.com/2019/05/26/判断数据类型/index.html">
 <meta property="og:site_name" content="Kuma&#39;s blog">
-<meta property="og:description" content="一个前端工程师的个人博客">
+<meta property="og:description" content="JavaScript中有6种数据类型：数字（number）、字符串（string）、布尔值（boolean）、undefined、null、对象（Object）、Symbol（ES6新增）。其中对象类型包括：数组（Array）、函数（Function）、还有两个特殊的对象：正则（RegExp）和日期（Date）。 JavaScript有多种方法确定一个值到底是什么类型。 typeof运算符type">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-25T17:20:33.647Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kuma&#39;s blog">
-<meta name="twitter:description" content="一个前端工程师的个人博客">
+<meta name="twitter:title" content="判断数据类型">
+<meta name="twitter:description" content="JavaScript中有6种数据类型：数字（number）、字符串（string）、布尔值（boolean）、undefined、null、对象（Object）、Symbol（ES6新增）。其中对象类型包括：数组（Array）、函数（Function）、还有两个特殊的对象：正则（RegExp）和日期（Date）。 JavaScript有多种方法确定一个值到底是什么类型。 typeof运算符type">
 
 
 
@@ -114,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/26/判断数据类型/">
 
 
 
@@ -124,7 +125,7 @@
   };
 </script>
 
-  <title>Kuma's blog</title>
+  <title>判断数据类型 | Kuma's blog</title>
   
 
 
@@ -172,8 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -211,7 +211,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -273,9 +273,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -307,10 +307,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/26/判断数据类型/" class="post-title-link" itemprop="url">判断数据类型</a>
+          <h1 class="post-title" itemprop="name headline">判断数据类型
+
               
             
           </h1>
@@ -374,9 +372,7 @@
       
 
       
-        
-          
-            <p>JavaScript中有6种数据类型：数字（number）、字符串（string）、布尔值（boolean）、undefined、null、对象（Object）、Symbol（ES6新增）。其中对象类型包括：数组（Array）、函数（Function）、还有两个特殊的对象：正则（RegExp）和日期（Date）。</p>
+        <p>JavaScript中有6种数据类型：数字（number）、字符串（string）、布尔值（boolean）、undefined、null、对象（Object）、Symbol（ES6新增）。其中对象类型包括：数组（Array）、函数（Function）、还有两个特殊的对象：正则（RegExp）和日期（Date）。</p>
 <p>JavaScript有多种方法确定一个值到底是什么类型。</p>
 <h3 id="typeof运算符"><a href="#typeof运算符" class="headerlink" title="typeof运算符"></a>typeof运算符</h3><p>typeof可以正确的返回部分类型数据，但是null、Object、正则、日期,均返回object。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> &#123;<span class="attr">a</span>:<span class="number">1</span>&#125; === <span class="string">'object'</span>;</span><br><span class="line"><span class="keyword">typeof</span> /\s/g === <span class="string">'object'</span>;</span><br><span class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Date</span>() === <span class="string">'object'</span>;</span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> === <span class="string">'object'</span>;</span><br></pre></td></tr></table></figure></p>
 <p>备注：<br>typeof(null)返回object的原因是一个历史遗留bug。在 JavaScript 最初的实现中，JavaScript 中的值是由一个表示类型的标签和实际数据值表示的。对象的类型标签是 0。由于 null 代表的是空指针（大多数平台下值为 0x00），因此，null的类型标签也成为了 0，typeof null就错误的返回了”object”。（reference）<br>ECMAScript提出了一个修复（通过opt-in），但被拒绝。这将导致typeof null === ‘null’。</p>
@@ -387,8 +383,6 @@
 <h3 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a>Object.prototype.toString</h3><p>toString是Object原型对象上的一个方法，该方法默认返回其调用者的具体类型，更严格的讲，是 toString运行时this指向的对象类型, 返回的类型格式为[object,xxx],xxx是具体的数据类型，其中包括：String,Number,Boolean,Undefined,Null,Function,Date,Array,RegExp,Error,HTMLDocument,… 基本上所有对象的类型都可以通过这个方法获取到。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">typeIs</span>(<span class="params">basic</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> type = <span class="built_in">Object</span>.prototype.toString.call(basic).slice(<span class="number">8</span>,<span class="number">-1</span>)</span><br><span class="line">  <span class="keyword">return</span> type.toLowerCase()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;&#125;,</span><br><span class="line">    arr = [],</span><br><span class="line">    rex = <span class="regexp">/\s/g</span>,</span><br><span class="line">    fun = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">    time = <span class="keyword">new</span> <span class="built_in">Date</span>(),</span><br><span class="line">    str = <span class="string">'kuma'</span>,</span><br><span class="line">    num = <span class="number">12</span>,</span><br><span class="line">    bol = <span class="literal">false</span>,</span><br><span class="line">    und = <span class="literal">undefined</span>,</span><br><span class="line">    nul = <span class="literal">null</span>,</span><br><span class="line">    sym = <span class="built_in">Symbol</span>(<span class="string">'a'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(typeIs(obj) === <span class="string">'object'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(typeIs(arr) === <span class="string">'array'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(typeIs(rex) === <span class="string">'regexp'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(typeIs(fun) === <span class="string">'function'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(typeIs(time) === <span class="string">'date'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(typeIs(str) === <span class="string">'string'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(typeIs(num) === <span class="string">'number'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(typeIs(bol) === <span class="string">'boolean'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(typeIs(und) === <span class="string">'undefined'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(typeIs(nul) === <span class="string">'null'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(typeIs(sym) === <span class="string">'symbol'</span>)</span><br></pre></td></tr></table></figure></p>
 <p>这个方法最为推荐，可以写一个函数，返回对应的数据类型。</p>
 
-          
-        
       
     </div>
 
@@ -409,14 +403,20 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -426,14 +426,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -453,8 +454,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -513,6 +523,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#typeof运算符"><span class="nav-number">1.</span> <span class="nav-text">typeof运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#instanceof运算符"><span class="nav-number">2.</span> <span class="nav-text">instanceof运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constructor属性"><span class="nav-number">3.</span> <span class="nav-text">constructor属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-prototype-toString"><span class="nav-number">4.</span> <span class="nav-text">Object.prototype.toString</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -643,6 +670,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -658,6 +689,8 @@
 
   
 
+
+  
 
 
   
